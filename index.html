@@ -322,9 +322,9 @@
             </div>
 
             <div class="tabs">
-                <button class="tab active" onclick="switchTab('add')">Add Transaction</button>
-                <button class="tab" onclick="switchTab('view')">View Transactions</button>
-                <button class="tab" onclick="switchTab('budgets')">Budgets</button>
+                <button class="tab active" onclick="switchTab('add', this)">Add Transaction</button>
+                <button class="tab" onclick="switchTab('view', this)">View Transactions</button>
+                <button class="tab" onclick="switchTab('budgets', this)">Budgets</button>
             </div>
 
             <div id="addTab" class="tab-content active">
@@ -567,11 +567,11 @@
             }).join('');
         }
 
-        function switchTab(tab) {
+        function switchTab(tab, el) {
             document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
             document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
             
-            event.target.classList.add('active');
+            el.classList.add('active');
             document.getElementById(tab + 'Tab').classList.add('active');
         }
 
